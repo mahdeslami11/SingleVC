@@ -1,0 +1,36 @@
+train_wav_dir: "/home/gyw/workspace/audio_datasets/AIShell/wav_all/train_S0217/S0217/"
+test_wav_dir: "/home/gyw/workspace/dataset/Any2One_Test22050/"
+
+out_dir: "/home/gyw/workspace/program/VC/SingleVC_G/any2one/output/"
+
+
+local_rank: 2
+
+resume: False
+resume_num: 0
+epochs: 4000
+batch_size: 4
+
+save_period: 20
+eval_period: 20
+step_record_time: 8
+
+learning_rate: 0.0001
+adam_b1: 0.8
+adam_b2: 0.99
+lr_decay: 0.995
+weight_decay: 0.00015
+
+########################################## mel feature ##########################
+sampling_rate: 22050
+num_mels: 80
+num_freq: 1025
+n_fft: 1024
+hop_size: 256
+win_size: 1024
+fmin: 0
+fmax: 8000
+
+num_workers: 1
+
+
