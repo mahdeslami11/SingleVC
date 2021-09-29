@@ -1,13 +1,12 @@
-import os
-import numpy as np
 import torch
-from torch.nn.utils import weight_norm, remove_weight_norm, spectral_norm
-from typing import Optional, Tuple
-
+import torch.nn as nn
 import torch.nn.functional as F
+from torch.nn.utils import weight_norm, remove_weight_norm
+from typing import Optional
 from torch import Tensor
 from torch.nn import Dropout, Conv1d, MultiheadAttention
-import torch.nn as nn
+import numpy as np
+
 
 class Convertor(nn.Module):
 	def __init__(self, d_model: int, nhead: int, d_hid: int, dropout=0.1):
@@ -15,18 +14,17 @@ class Convertor(nn.Module):
 		self.self_attn = MultiheadAttention(d_model, nhead, dropout=dropout)
 		self.conv0 = weight_norm(Conv1d(d_model, d_hid, 5, padding=2))
 		self.conv1 = weight_norm(Conv1d(d_hid, d_model, 1, padding=0))
-		self.dropout0 = Dropout(dropout)
 		self.dropout1 = Dropout(dropout)
+		self.dropout2 = Dropout(dropout)
 		self.conv0.apply(init_weights)
 		self.conv1.apply(init_weights)
-
 	def forward(self,src: Tensor,src_mask: Optional[Tensor] = None,src_key_padding_mask: Optional[Tensor] = None,) -> Tensor:
 		src2 = self.self_attn(src, src, src, attn_mask=src_mask, key_padding_mask=src_key_padding_mask)[0]
-		src = src + self.dropout0(src2)  # len,B,dim
+		src = src + self.dropout1(src2)  # len,B,dim
 		src2 = src.transpose(0, 1).transpose(1, 2)  # B,dim,len
 		src2 = self.conv1(F.relu(self.conv0(src2)))  # B,dim, len
 		src2 = src2.transpose(1, 0).transpose(2, 0)
-		src = src + self.dropout1(src2) # len,B,dim
+		src = src + self.dropout2(src2) # len,B,dim
 		return src
 
 	def remove_weight_norm(self):
@@ -38,10 +36,8 @@ class Conv1D_Norm_Act(nn.Module):
 		super(Conv1D_Norm_Act, self).__init__()
 		self.act_fn = act_fn
 		self.conv_block = nn.ModuleList()
-		self.conv_block.add_module("conv0", weight_norm(nn.Conv1d(c_in, c_out, kernel_size=kernel_size,
-				              stride=stride, padding=padding)))
+		self.conv_block.add_module("conv0", weight_norm(nn.Conv1d(c_in, c_out, kernel_size=kernel_size,stride=stride, padding=padding)))
 		self.conv_block.apply(init_weights)
-	
 	def forward(self, x):
 		for layer in self.conv_block:
 			x = layer(x)
@@ -53,6 +49,8 @@ class Conv1D_Norm_Act(nn.Module):
 		for l in self.conv_block:
 			remove_weight_norm(l)
 
+
+
 class Block_Unit(nn.Module):
 	def __init__(self, c_in, c_out, act_fn=None):
 		super(Block_Unit, self).__init__()
@@ -60,18 +58,22 @@ class Block_Unit(nn.Module):
 		self.c_out = c_out
 		self.conv_block1 = Conv1D_Norm_Act(c_in, c_out, 5, 1, 2, act_fn)
 		self.conv_block2 = Conv1D_Norm_Act(c_in, c_out, 3, 1, 1, act_fn)
-		self.adjust_layer = weight_norm(nn.Conv1d(c_in, c_out, kernel_size=1, stride=1, padding=0))
-		self.adjust_layer.apply(init_weights)
+		
+		self.adjust_dim_layer = weight_norm(nn.Conv1d(c_in, c_out, kernel_size=1, stride=1, padding=0))
+
+		self.adjust_dim_layer.apply(init_weights)
 	def forward(self, x):
 		out1 = self.conv_block1(x) + self.conv_block2(x)
 		if self.c_in != self.c_out:
-			x = self.adjust_layer(x)
+			x = self.adjust_dim_layer(x)
 		x = out1 + x
 		return x
+
 	def remove_weight_norm(self):
 		self.conv_block1.remove_weight_norm()
 		self.conv_block2.remove_weight_norm()
-		remove_weight_norm(self.adjust_layer)
+		remove_weight_norm(self.adjust_dim_layer)
+
 
 class Attention(nn.Module):
 	def __init__(self, d_model,d_head):
@@ -124,10 +126,10 @@ class Decoder(nn.Module):
 			nn.InstanceNorm1d(d_model)
 		)
 
-		self.mel_linear0 = nn.Linear(d_model, d_model)
-		self.mel_linear1 = nn.Linear(80, 80)
+		self.mel_linear1 = nn.Linear(d_model, d_model)
+		self.mel_linear2 = nn.Linear(80, 80)
 
-		self.convertors = nn.Sequential(
+		self.smoothers = nn.Sequential(
 			Convertor(d_model, 8, 512),
 			Convertor(d_model, 8, 512),
 			Convertor(d_model, 8, 512))# len,B,dim
@@ -139,19 +141,27 @@ class Decoder(nn.Module):
 			Block_Unit(80, 80, nn.ReLU()),  # /2
 		)
 
+
+	
 	def forward(self, x, x_masks):
 		x = self.pre_conv_block(x)
 		x = self.pre_attention_block(x)
 		x = x.transpose(1, 2)  # B,len,dim
-		x = self.mel_linear0(x)
+		x = self.mel_linear1(x)
+		# x = self.mel_linear2(x)  # b ,len ,dim
+
 		x = x.transpose(0, 1)  # [len,B,512]
 
-		for layer in self.convertors:
+		for layer in self.smoothers:
 			x = layer(x, src_key_padding_mask=x_masks)
+
+		# x = self.smoothers(x, src_key_padding_mask=x_masks)  # [len,B,512]
+		# x = self.mel_linear(x)        # #[len,B,512] --->[len,B,80]
 		x = x.transpose(0, 1).transpose(1, 2)  # b ,dim ,len
 		x = self.post_block(x)
+		# x = self.post_net(x)# [B,80,len]
 		x = x.transpose(1, 2)  # [B,len,80]
-		x = F.relu(self.mel_linear1(x))
+		x = F.relu(self.mel_linear2(x))
 		return x
 
 	def remove_weight_norm(self):
@@ -159,7 +169,7 @@ class Decoder(nn.Module):
 			l.remove_weight_norm()
 		for l in self.post_block:
 			l.remove_weight_norm()
-		for l in self.convertors:
+		for l in self.smoothers:
 			l.remove_weight_norm()
 
 
@@ -196,9 +206,6 @@ def apply_weight_norm(m):
     classname = m.__class__.__name__
     if classname.find("Conv") != -1:
         weight_norm(m)
-
-
-# 设置随机数种子
 
 if __name__ == '__main__':
 	x = torch.randn([5, 259, 80])

@@ -1,48 +1,23 @@
-###########################################################
-#                FEATURE EXTRACTION SETTING               #
-###########################################################
-
-
-
-
-test_wav_dir: "/home/gyw/workspace/audio_datasets/SingleVC_Infer/"
-
-out_dir: "/home/gyw/workspace/program/VC/SingleVC/any2one/infer_output/"
-
+########################################## SINGLEVC  ##########################
+test_wav_dir: "SingleVC_Infer/"
+out_dir: "infer_output/"
 resume: True
-#resume_num: 3000
-resume_model_path: "/home/gyw/workspace/program/VC/SingleVC/any2one/output/2021_09_05_21_59_26/model/checkpoint-1820.pt"
-
-###########################################################
+resume_model_path: "infer/checkpoint-3000.pt"
 local_rank: 1
-
-
 step_record_time: 8
+########################################## HIFI-GAN ##########################
+hifi_model_path: "hifivoice/pretrained/UNIVERSAL_V1/g_02500000"
+hifi_config_path: "hifivoice/pretrained/UNIVERSAL_V1/config.json"
 
-
-
-
-
-
-
-
-########################################## mel feature ##########################
-
-#segment_size: 8192
-#segment_size: 32768 #128
-#segment_size: 24576 #128
+########################################## MEL-FEATURE ##########################
 num_mels: 80
 num_freq: 1025
 n_fft: 1024
 hop_size: 256
 win_size: 1024
-
 sampling_rate: 22050
-
 fmin: 0
 fmax: 8000
-
-
 num_workers: 1
 
 

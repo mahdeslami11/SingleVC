@@ -1,25 +1,16 @@
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '1'
-
-import time
-import sys
-sys.path.append("/home/gyw/workspace/program/VC/SingleVC_G")
-sys.path.append("../")
-
-
+# import sys
+# sys.path.append("/home/gyw/workspace/program/VC/SingleVC_G")
 import torch
 from torch.backends import cudnn
-
+from torch.utils.data import DataLoader
 import numpy as np
 import yaml
-
-from torch.utils.data import DataLoader
+import time
 from any2one import util
-
-from any2one.meldataset import MelDataset, Test_MelDataset, get_dataset_filelist,collate_batch,mel_denormalize
-
+from any2one.meldataset import Test_MelDataset, get_dataset_filelist,mel_denormalize
 from any2one.model.any2one import Generator
-
 from hifivoice.inference_e2e import  hifi_infer
 
 class Solver():
@@ -29,7 +20,6 @@ class Solver():
 		self.local_rank = self.config['local_rank']
 		self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 		self.make_records()
-
 		self.Generator = Generator().to(self.device)
 		self.init_epoch = 0
 		if self.config['resume']:
@@ -42,15 +32,10 @@ class Solver():
 		self.log_dir = os.path.join(self.config['out_dir'], time_record, "log")
 		self.convt_mel_dir = os.path.join(self.config['out_dir'], time_record, "infer", "mel")
 		self.convt_voice_dir = os.path.join(self.config['out_dir'], time_record, "infer", "voice")
-
 		os.makedirs(self.log_dir, exist_ok=True)
 		os.makedirs(self.convt_mel_dir, exist_ok=True)
 		os.makedirs(self.convt_voice_dir, exist_ok=True)
 		self.logging = util.Logger(self.log_dir, "log.txt")
-
-
-
-
 
 	def get_test_data_loaders(self):
 		test_filelist = get_dataset_filelist(self.config["test_wav_dir"])
@@ -60,16 +45,11 @@ class Solver():
 		test_data_loader = DataLoader(testset, num_workers=1, shuffle=False, sampler=None,
 									  batch_size=1, pin_memory=False, drop_last=True)
 		return test_data_loader
-	
 
-	
 	def resume_model(self, resume_model_path):
-		print("*********  [load model]   ***********")
-		# checkpoint_file = os.path.join(self.model_dir, 'checkpoint-%d.pt' % (resume_num))
 		checkpoint_file = resume_model_path
 		self.logging.info('loading the model from %s' % (checkpoint_file))
 		checkpoint = torch.load(checkpoint_file, map_location='cpu')
-		# start epoch and
 		self.init_epoch = checkpoint['epoch']
 		self.Generator.load_state_dict(checkpoint['Generator'])
 
@@ -83,28 +63,22 @@ class Solver():
 			for idx, (input_mel, word) in enumerate(test_data_loader):
 				input_mel = input_mel.cuda()
 				fake_mel = self.Generator(input_mel,None)
-				# fake_mel = input_mel
 				fake_mel = torch.clamp(fake_mel, min=0, max=1)
 				fake_mel = mel_denormalize(fake_mel)
 				fake_mel = fake_mel.transpose(1,2)
 				fake_mel = fake_mel.detach().cpu().numpy()
 				file_name = "epoch"+"_"+word[0]
 				mel_npy_file = os.path.join(self.convt_mel_dir, file_name+ '.npy')
-				# mel_npy_list.append(mel_npy_file)
 				np.save(mel_npy_file, fake_mel, allow_pickle=False)
 				mel_npy_file_list.append([file_name,fake_mel])
 				if len(mel_npy_file_list)==500 or idx == len(test_data_loader)-1:
 					self.logging.info('【infer_%d】 len: %d', idx,len(mel_npy_file_list))
-					hifi_infer(mel_npy_file_list, self.convt_voice_dir)
+					hifi_infer(mel_npy_file_list, self.convt_voice_dir,self.config["hifi_model_path"],self.config["hifi_config_path"])
 					mel_npy_file_list.clear()
 
-
-
-	
 if __name__ == '__main__':
-	print("【Solver】" )
 	cudnn.benchmark = True
-	config_path = r"/home/gyw/workspace/program/VC/SingleVC/any2one/infer/infer_config.yaml"
+	config_path = r"infer/infer_config.yaml"
 	with open(config_path) as f:
 		config = yaml.load(f, Loader=yaml.Loader)
 	solver = Solver(config)

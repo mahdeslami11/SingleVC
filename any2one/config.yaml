@@ -1,18 +1,16 @@
-train_wav_dir: "/home/gyw/workspace/audio_datasets/AIShell/wav_all/train_S0217/S0217/"
-test_wav_dir: "/home/gyw/workspace/dataset/Any2One_Test22050/"
+########################################## SINGLEVC  ##########################
+train_wav_dir: "VCTK-Corpus/wav22050/p249/"
+test_wav_dir: "Any2One_Test22050/"
+out_dir: "any2one/output/"
 
-out_dir: "/home/gyw/workspace/program/VC/SingleVC_G/any2one/output/"
-
-
-local_rank: 2
-
-resume: False
-resume_num: 0
+local_rank: 1
+resume: True
+resume_model_path: "model/checkpoint-3000.pt"
 epochs: 4000
 batch_size: 4
 
-save_period: 20
-eval_period: 20
+save_period: 50
+eval_period: 50
 step_record_time: 8
 
 learning_rate: 0.0001
@@ -21,7 +19,11 @@ adam_b2: 0.99
 lr_decay: 0.995
 weight_decay: 0.00015
 
-########################################## mel feature ##########################
+########################################## HIFI-GAN ##########################
+hifi_model_path: "hifivoice/pretrained/UNIVERSAL_V1/g_02500000"
+hifi_config_path: "hifivoice/pretrained/UNIVERSAL_V1/config.json"
+
+########################################## MEL-FEATURE ##########################
 sampling_rate: 22050
 num_mels: 80
 num_freq: 1025
