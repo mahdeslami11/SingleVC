@@ -9,7 +9,7 @@ For the audio samples, please refer to our [demo page](https).
 
 ## Usage
 
-You can download the pretrained model as well as the vocoder following the link.
+You can download the pretrained model as well as the vocoder following the [link](https://drive.google.com/file/d/1yV9cCne7piqBI9vng13JDdLuRlMkTbZR/view?usp=sharing).
 
 You can install the dependencies with
 ```bash
