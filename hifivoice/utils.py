@@ -12,7 +12,6 @@ def plot_spectrogram(spectrogram):
     im = ax.imshow(spectrogram, aspect="auto", origin="lower",
                    interpolation='none')
     plt.colorbar(im, ax=ax)
-
     fig.canvas.draw()
     plt.close()
 
