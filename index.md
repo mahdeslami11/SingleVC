@@ -10,12 +10,7 @@ This page provides converted speeches samples. The pretrained model is trained w
 
 | Dataset     | type | text | source | convert |
 |-------------|------|------|--------|---------|
-| VCTK Corpus |      |      | <audio id="audio" controls="" preload="none">
-<source id="mp3" src="1_BAC009S0234W0129.wav">
-</audio>
- |    <audio id="audio" controls="" preload="none">
-<source id="mp3" src="1_BAC009S0234W0129.wav">
-</audio>     |
+| VCTK Corpus |      |      | <audio id="audio" controls="" preload="none"> <source id="mp3" src="1_BAC009S0234W0129.wav"> </audio>|  123 |
 |             |      |      |        |         |
 |             |      |      |        |         |
 |             |      |      |        |         |
