@@ -21,7 +21,7 @@ This page provides converted speeches samples. The pretrained model is trained w
       <td>Ask her to bring these things with her from the store.</td>
    </tr>
    <tr>
-      <td><audio id=""audio"" controls="""" preload=""none""> <source id=""VF1_s"" src=""converted_sample/VCTK/F1/1_p310_002.wav""> </audio>"</td>
+      <td><audio id=""audio"" controls="""" preload=""none""> <source id=""VF1_s""src=""converted_sample/VCTK/F1/1_p310_002.wav""> </audio>"</td>
       <td><audio id="audio" controls="" preload="none"> <source id="VF1_t" src="converted_sample/VCTK/F1/1_p310_002_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
