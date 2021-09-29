@@ -10,23 +10,24 @@ This page provides converted speeches samples. The pretrained model is trained w
 <table>
    <tr>
       <td>DataSet</td>
-      <td>Label</td>
-      <td>Text</td>
       <td>Source</td>
       <td>Convert</td>
    </tr>
    <tr>
       <td>VCTK</td>
-      <td>p310_002(female)</td>
+      <td>"p310_002(female)</td>
+   </tr>
+   <tr>
       <td>Ask her to bring these things with her from the store.</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="VF1_s" src="converted_sample/VCTK/F1/1_p310_002.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td><audio id=""audio"" controls="""" preload=""none""> <source id=""VF1_s"" src=""converted_sample/VCTK/F1/1_p310_002.wav""> </audio>"</td>
       <td><audio id="audio" controls="" preload="none"> <source id="VF1_t" src="converted_sample/VCTK/F1/1_p310_002_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
       <td></td>
    </tr>
 </table>
-
 
 
 
