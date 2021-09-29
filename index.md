@@ -5,7 +5,7 @@ SingleVC performs A2O VC through a self-supervised task(\emph{X$_{i}$} $\to$ $\h
 This page provides converted speeches samples. The pretrained model is trained with p249(female, 22.5-minute) from VCTK corpus.
 
 <audio id="audio" controls="" preload="none">
-      <source id="mp3" src="1_BAC009S0234W0129.wav">
+      <source id="wav" src="https://github.com/BrightGu/SingleVC/blob/gh-pages/1_BAC009S0234W0129.wav">
 </audio>
 
 | Dataset     | type | text | source | convert |
