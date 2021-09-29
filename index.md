@@ -7,21 +7,25 @@ This page provides converted speeches samples. The pretrained model is trained w
 <audio id="audio" controls="" preload="none">
       <source id="wav" src="https://github.com/BrightGu/SingleVC/blob/gh-pages/1_BAC009S0234W0129.wav">
 </audio>
-| Dataset     | label | text | source | convert |
-|-------------|-------|------|--------|---------|
-| VCTK Corpus |  p310_002(female)     |   Ask her to bring these things with her from the store.   | <audio id="audio" controls="" preload="none"> <source id="VF1_s" src="converted_sample/VCTK/F1/1_p310_002.wav"> </audio>       |    <audio id="audio" controls="" preload="none"> <source id="VF1_t" src="converted_sample/VCTK/F1/1_p310_002_generated_e2e.wav"> </audio>     |
-|             |       |      |        |         |
-|             |       |      |        |         |
-|             |       |      |        |         |
-| LibriSpeech |       |      |        |         |
-|             |       |      |        |         |
-|             |       |      |        |         |
-|             |       |      |        |         |
-| LJSpeech    |       |      |        |         |
-|             |       |      |        |         |
-| AISHELL     |       |      |        |         |
-|             |       |      |        |         |
-| WILD        |       |      |        |         |
+<table>
+   <tr>
+      <td>DataSet</td>
+      <td>Label</td>
+      <td>Text</td>
+      <td>Source</td>
+      <td>Convert</td>
+   </tr>
+   <tr>
+      <td>VCTK</td>
+      <td>p310_002(female)</td>
+      <td>Ask her to bring these things with her from the store.</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VF1_s" src="converted_sample/VCTK/F1/1_p310_002.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VF1_t" src="converted_sample/VCTK/F1/1_p310_002_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td></td>
+   </tr>
+</table>
 
 
 
