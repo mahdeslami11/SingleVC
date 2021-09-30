@@ -73,45 +73,110 @@ This page provides converted speeches samples. The pretrained model is trained w
    <tr>
       <td>M2_272_130225_000010_000007</td>
       <td><audio id="audio" controls="" preload="none"> <source id="LM2_s" src="converted_sample/LirbiSpeech/M2/3_272_130225_000010_000007.wav"> </audio></td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LM2_t" src="converted_sample/LirbiSpeech/M2/3_272_130225_000010_000007_generated_e2e.wav"> </audio> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM2_t" src="converted_sample/LirbiSpeech/M2/3_272_130225_000010_000007_generated_e2e.wav"> </audio></td>
+   </tr>
+</table>
+
+### VCC2020
+1. F1, If not, it's about time somebody did.
+2. F2, The figures are adjusted for seasonal variation.
+3. M1, The trip was a disaster.
+4. M2, Sometimes, it helps to take a step back.
+
+<table>
+   <tr>
+      <td>Utterance</td>
+      <td>Source</td>
+      <td>Convert</td>
+   </tr>
+   <tr>
+      <td>F1_TEF1_E10061</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CF1_s" src="converted_sample/VCC2020/F1/1_TEF1_E10061.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CF1_t" src="converted_sample/VCC2020/F1/1_TEF1_E10061_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>F2_SEF2_E10066</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CF2_s" src="converted_sample/VCC2020/F2/5_SEF2_E10066.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CF2_t" src="converted_sample/VCC2020/F2/5_SEF2_E10066_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>M1_SEM1_E10033</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CM1_s" src="converted_sample/VCC2020/M1/3_SEM1_E10033.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CM1_t" src="converted_sample/VCC2020/M1/3_SEM1_E10033_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>M2_TEM2_E20042</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CM2_s" src="converted_sample/VCC2020/M2/1_TEM2_E20042.wav"> </audio> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CM2_t" src="converted_sample/VCC2020/M2/1_TEM2_E20042_generated_e2e.wav"> </audio> </audio></td>
+   </tr>
+</table>
+
+### LJSpeech
+1. F1, especially as no more time is occupied, or cost incurred, in casting, setting, or printing beautiful letters
+2. F2, fourteen sixty-nine, fourteen seventy.
+
+
+<table>
+   <tr>
+      <td>Utterance</td>
+      <td>Source</td>
+      <td>Convert</td>
+   </tr>
+   <tr>
+      <td>F1_LJ001-0045</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF1_s" src="converted_sample/LJSpeech/F1/1_LJ001-0045.wav"> </audio> </td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF1_t" src="converted_sample/LJSpeech/F1/1_LJ001-0012_generated_e2e"> </audio></td>
+   </tr>
+   <tr>
+      <td>F2_LJ001-0045</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF2_s" src="converted_sample/LJSpeech/F2/3_LJ001-0045.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF2_t" src="converted_sample/LJSpeech/F2/3_LJ001-0045_generated_e2e.wav"> </audio></td>
+   </tr>
+</table>
+
+### LJSpeech
+1. F1, 购房节奏暂时性放缓.
+2. M2, 目前房地产整体形势不是特别景气.
+
+
+<table>
+   <tr>
+      <td>Utterance</td>
+      <td>Source</td>
+      <td>Convert</td>
+   </tr>
+   <tr>
+      <td>F1_BAC009S0234W0141</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="AF1_s" src="converted_sample/AISHELL/F1/3_BAC009S0234W0141.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="AF1_t" src="converted_sample/AISHELL/F1/3_BAC009S0234W0141_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>F2_BAC009S0091W0160</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="AM1_s" src="converted_sample/AISHELL/M1/5_BAC009S0091W0160.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="AM1_t" src="converted_sample/AISHELL/M1/5_BAC009S0091W0160_generated_e2e.wav"> </audio></td>
    </tr>
 </table>
 
 
+### Wild
+1. M1, 我国发展仍然处于重要战略机遇期，但
+2. M2, food_and_medical_supplies.
 
 
-
-
-
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/BrightGu/SingleVC/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<table>
+   <tr>
+      <td>Utterance</td>
+      <td>Source</td>
+      <td>Convert</td>
+   </tr>
+   <tr>
+      <td>F1_kh_42_2</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="WM1_s" src="converted_sample/Wild/M1/1_kh_42_2.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="WM1_t" src="converted_sample/Wild/M1/1_kh_42_2_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>F2_SEF2_E10066</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="WM2_s" src="converted_sample/Wild/M2/3_trumps.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="WM2_t" src="converted_sample/Wild/M2/3_trumps_generated_e2e.wav"> </audio></td>
+   </tr>
+</table>
