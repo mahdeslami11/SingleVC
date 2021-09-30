@@ -1,12 +1,8 @@
 ## SingleVC: Any2-to-one voice conversion
 
-SingleVC performs A2O VC through a self-supervised task((Xi → Xˆi → X̂i )).  Xˆsi is  a PSDR-processed speech with pitch-shifted $s$. The more details can be access here.
+SingleVC performs A2O VC through a self-supervised task((X<sub>i</sub>  →X̂<sup>s</sup><sub>i</sub> → X̂<sub>i</sub>  )).  X̂<sup>s</sup><sub>i</sub> is  a PSDR-processed speech with pitch-shifted s. The more details can be access here.
 
-This page provides converted speeches samples. The pretrained model is trained with p249(female, 22.5-minute) from VCTK corpus.
-
-<audio id="audio" controls="" preload="none">
-      <source id="wav" src="https://github.com/BrightGu/SingleVC/blob/gh-pages/1_BAC009S0234W0129.wav">
-</audio>
+This page provides converted speech samples. The pretrained model is trained with p249(female, 22.5-minute) from VCTK corpus.
 
 ### p249_samples
 1. We also need a small plastic snake and a big toy frog for the kids. 
