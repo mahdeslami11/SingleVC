@@ -143,13 +143,13 @@ This page provides converted speech samples. The pretrained model is trained wit
    </tr>
    <tr>
       <td>F1_LJ001-0012</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF1_s" src="converted_sample/LJSpeech/F1/1_LJ001-0012.wav"> </audio> </td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF1_t" src="converted_sample/LJSpeech/F1/1_LJ001-0012_generated_e2e"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="JF1_s" src="converted_sample/LJSpeech/F1/1_LJ001-0012.wav"> </audio> </td>
+      <td><audio id="audio" controls="" preload="none"> <source id="JF1_t" src="converted_sample/LJSpeech/F1/1_LJ001-0012_generated_e2e"> </audio></td>
    </tr>
    <tr>
       <td>F2_LJ001-0045</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF2_s" src="converted_sample/LJSpeech/F2/3_LJ001-0045.wav"> </audio></td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF2_t" src="converted_sample/LJSpeech/F2/3_LJ001-0045_generated_e2e.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="JF2_s" src="converted_sample/LJSpeech/F2/3_LJ001-0045.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="JF2_t" src="converted_sample/LJSpeech/F2/3_LJ001-0045_generated_e2e.wav"> </audio></td>
    </tr>
 </table>
 
