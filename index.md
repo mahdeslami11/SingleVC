@@ -8,6 +8,30 @@ This page provides converted speeches samples. The pretrained model is trained w
       <source id="wav" src="https://github.com/BrightGu/SingleVC/blob/gh-pages/1_BAC009S0234W0129.wav">
 </audio>
 
+### p249_samples
+1. We also need a small plastic snake and a big toy frog for the kids. 
+2. The weaknesses are few.
+3. In fact, they have the opposite effect.
+<table>
+   <tr>
+      <td>Utterance</td>
+      <td>Source</td>
+   </tr>
+   <tr>
+      <td>p249_004</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="SA1_s" src="converted_sample/p249_sample/p249_004.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>p249_004</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="SA2_s" src="converted_sample/p249_sample/p249_004.wav"> </audio></td>
+    </tr>
+   <tr>
+      <td>p249_316</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="SA1_s" src="converted_sample/p249_sample/p249_316.wav"> </audio></td>
+   </tr>
+</table>
+
+
 ### VCTK
 1. F1, Ask her to bring these things with her from the store.
 2. F2, She can scoop these things into three red bags, and we will go meet her Wednesday at the train station. 
@@ -67,7 +91,7 @@ This page provides converted speeches samples. The pretrained model is trained w
    </tr>
    <tr>
       <td>M1_296_129659_000004_000005</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LM1_s" src="converted_sample/LirbiSpeech/M1/1_296_129659_000004_000005.wav"> </audio> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM1_s" src="converted_sample/LirbiSpeech/M1/1_296_129659_000004_000005.wav"> </audio></td>
       <td><audio id="audio" controls="" preload="none"> <source id="LM1_t" src="converted_sample/LirbiSpeech/M1/1_296_129659_000004_000005_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
@@ -106,7 +130,7 @@ This page provides converted speeches samples. The pretrained model is trained w
    </tr>
    <tr>
       <td>M2_TEM2_E20042</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="CM2_s" src="converted_sample/VCC2020/M2/1_TEM2_E20042.wav"> </audio> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CM2_s" src="converted_sample/VCC2020/M2/1_TEM2_E20042.wav"> </audio></td>
       <td><audio id="audio" controls="" preload="none"> <source id="CM2_t" src="converted_sample/VCC2020/M2/1_TEM2_E20042_generated_e2e.wav"> </audio> </audio></td>
    </tr>
 </table>
@@ -114,7 +138,6 @@ This page provides converted speeches samples. The pretrained model is trained w
 ### LJSpeech
 1. F1, especially as no more time is occupied, or cost incurred, in casting, setting, or printing beautiful letters
 2. F2, fourteen sixty-nine, fourteen seventy.
-
 
 <table>
    <tr>
@@ -161,7 +184,6 @@ This page provides converted speeches samples. The pretrained model is trained w
 ### Wild
 1. M1, 我国发展仍然处于重要战略机遇期，但
 2. M2, food_and_medical_supplies.
-
 
 <table>
    <tr>
