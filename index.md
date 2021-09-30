@@ -77,18 +77,18 @@ This page provides converted speech samples. The pretrained model is trained wit
    </tr>
    <tr>
       <td>F1_225_131256_000006_000002</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF1_s" src="converted_sample/LirbiSpeech/F1/2_225_131256_000006_000002.wav"> </audio></td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF1_t" src="converted_sample/LirbiSpeech/F1/2_225_131256_000006_000002_generated_e2e.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF1_s" src="converted_sample/LibriSpeech/F1/2_225_131256_000006_000002.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF1_t" src="converted_sample/LibriSpeech/F1/2_225_131256_000006_000002_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
       <td>F2_188_135249_000012_000000</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF2_s" src="converted_sample/LirbiSpeech/F2/4_188_135249_000012_000000.wav"> </audio></td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF2_t" src="converted_sample/LirbiSpeech/F2/4_188_135249_000012_000000_generated_e2e.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF2_s" src="converted_sample/LibriSpeech/F2/4_188_135249_000012_000000.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF2_t" src="converted_sample/LibriSpeech/F2/4_188_135249_000012_000000_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
       <td>M1_296_129659_000004_000005</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LM1_s" src="converted_sample/LirbiSpeech/M1/1_296_129659_000004_000005.wav"> </audio></td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LM1_t" src="converted_sample/LirbiSpeech/M1/1_296_129659_000004_000005_generated_e2e.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM1_s" src="converted_sample/LibriSpeech/M1/1_296_129659_000004_000005.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM1_t" src="converted_sample/LibriSpeech/M1/1_296_129659_000004_000005_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
       <td>M2_272_130225_000010_000007</td>
