@@ -92,8 +92,8 @@ This page provides converted speech samples. The pretrained model is trained wit
    </tr>
    <tr>
       <td>M2_272_130225_000010_000007</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LM2_s" src="converted_sample/LirbiSpeech/M2/3_272_130225_000010_000007.wav"> </audio></td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LM2_t" src="converted_sample/LirbiSpeech/M2/3_272_130225_000010_000007_generated_e2e.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM2_s" src="converted_sample/LibriSpeech/M2/3_272_130225_000010_000007.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM2_t" src="converted_sample/LibriSpeech/M2/3_272_130225_000010_000007_generated_e2e.wav"> </audio></td>
    </tr>
 </table>
 
@@ -144,7 +144,7 @@ This page provides converted speech samples. The pretrained model is trained wit
    <tr>
       <td>F1_LJ001-0012</td>
       <td><audio id="audio" controls="" preload="none"> <source id="JF1_s" src="converted_sample/LJSpeech/F1/1_LJ001-0012.wav"> </audio> </td>
-      <td><audio id="audio" controls="" preload="none"> <source id="JF1_t" src="converted_sample/LJSpeech/F1/1_LJ001-0012_generated_e2e"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="JF1_t" src="converted_sample/LJSpeech/F1/1_LJ001-0012_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
       <td>F2_LJ001-0045</td>
