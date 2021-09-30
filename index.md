@@ -8,21 +8,37 @@ This page provides converted speeches samples. The pretrained model is trained w
       <source id="wav" src="https://github.com/BrightGu/SingleVC/blob/gh-pages/1_BAC009S0234W0129.wav">
 </audio>
 
+### VCTK
+1. F1, Ask her to bring these things with her from the store.
+2. F2, She can scoop these things into three red bags, and we will go meet her Wednesday at the train station. 
+3. M1, Please call Stella.
+4. M2, He should have asked for a second opinion.
+
 <table>
    <tr>
-      <td>DataSet</td>
+      <td>Utterance</td>
       <td>Source</td>
       <td>Convert</td>
    </tr>
    <tr>
-      <td>VCTK_F1</td>
-      <td>p310_002_Ask her to bring these things with her from the store</td>
-      <td></td>
-   </tr>
-   <tr>
-      <td></td>
+      <td>F1_p310_002</td>
       <td><audio id="audio" controls="" preload="none"> <source id="VF1_s" src="converted_sample/VCTK/F1/1_p310_002.wav"> </audio></td>
       <td><audio id="audio" controls="" preload="none"> <source id="VF1_t" src="converted_sample/VCTK/F1/1_p310_002_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>F2_p240_005</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VF2_s" src="converted_sample/VCTK/F2/1_p240_005.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VF2_t" src="converted_sample/VCTK/F2/1_p240_005_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>M1_p374_001</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VM1_s" src="converted_sample/VCTK/M1/1_p374_001.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VM1_t" src="converted_sample/VCTK/M1/1_p374_001_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>M2_p245_062</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VM2_s" src="converted_sample/VCTK/M2/4_p245_062.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="VM2_t" src="converted_sample/VCTK/M2/4_p245_062_generated_e2e.wav"> </audio></td>
    </tr>
    <tr>
       <td></td>
