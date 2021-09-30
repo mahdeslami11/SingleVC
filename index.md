@@ -40,10 +40,44 @@ This page provides converted speeches samples. The pretrained model is trained w
       <td><audio id="audio" controls="" preload="none"> <source id="VM2_s" src="converted_sample/VCTK/M2/4_p245_062.wav"> </audio></td>
       <td><audio id="audio" controls="" preload="none"> <source id="VM2_t" src="converted_sample/VCTK/M2/4_p245_062_generated_e2e.wav"> </audio></td>
    </tr>
+</table>
+
+
+### LibriSpeech
+1. F1, The visit went off successfully, as was to have been expected.
+2. F2, "He's Gilbert Blythe," said Marilla contentedly.
+3. M1, All judgements do not require examination, that is, investigation into the grounds of their truth.
+4. M2, And always that same pretext is offered--it looks like the thing.
+
+<table>
    <tr>
-      <td></td>
+      <td>Utterance</td>
+      <td>Source</td>
+      <td>Convert</td>
+   </tr>
+   <tr>
+      <td>F1_225_131256_000006_000002</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF1_s" src="converted_sample/LirbiSpeech/F1/2_225_131256_000006_000002.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF1_t" src="converted_sample/LirbiSpeech/F1/2_225_131256_000006_000002_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>F2_188_135249_000012_000000</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF2_s" src="converted_sample/LirbiSpeech/F2/4_188_135249_000012_000000.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF2_t" src="converted_sample/LirbiSpeech/F2/4_188_135249_000012_000000_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>M1_296_129659_000004_000005</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM1_s" src="converted_sample/LirbiSpeech/M1/1_296_129659_000004_000005.wav"> </audio> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM1_t" src="converted_sample/LirbiSpeech/M1/1_296_129659_000004_000005_generated_e2e.wav"> </audio></td>
+   </tr>
+   <tr>
+      <td>M2_272_130225_000010_000007</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM2_s" src="converted_sample/LirbiSpeech/M2/3_272_130225_000010_000007.wav"> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LM2_t" src="converted_sample/LirbiSpeech/M2/3_272_130225_000010_000007_generated_e2e.wav"> </audio> </audio></td>
    </tr>
 </table>
+
+
 
 
 
