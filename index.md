@@ -1,6 +1,6 @@
 ## SingleVC: Any2-to-one voice conversion
 
-SingleVC performs A2O VC through a self-supervised task(\emph{X$_{i}$} $\to$ $\hat{\emph{X$_{i}^{s}$}}$ $\to$ $\hat{\emph{X$_{i}$}}$).  $\hat{\emph{X$_{i}^{s}$}}$ is  a PSDR-processed speech with pitch-shifted $s$. The more details can be access here.
+SingleVC performs A2O VC through a self-supervised task((Xi → Xˆi → X̂i )).  Xˆsi is  a PSDR-processed speech with pitch-shifted $s$. The more details can be access here.
 
 This page provides converted speeches samples. The pretrained model is trained with p249(female, 22.5-minute) from VCTK corpus.
 
@@ -22,8 +22,8 @@ This page provides converted speeches samples. The pretrained model is trained w
       <td><audio id="audio" controls="" preload="none"> <source id="SA1_s" src="converted_sample/p249_sample/p249_004.wav"> </audio></td>
    </tr>
    <tr>
-      <td>p249_004</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="SA2_s" src="converted_sample/p249_sample/p249_004.wav"> </audio></td>
+      <td>p249_155</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="SA2_s" src="converted_sample/p249_sample/p249_155.wav"> </audio></td>
     </tr>
    <tr>
       <td>p249_316</td>
@@ -131,7 +131,7 @@ This page provides converted speeches samples. The pretrained model is trained w
    <tr>
       <td>M2_TEM2_E20042</td>
       <td><audio id="audio" controls="" preload="none"> <source id="CM2_s" src="converted_sample/VCC2020/M2/1_TEM2_E20042.wav"> </audio></td>
-      <td><audio id="audio" controls="" preload="none"> <source id="CM2_t" src="converted_sample/VCC2020/M2/1_TEM2_E20042_generated_e2e.wav"> </audio> </audio></td>
+      <td><audio id="audio" controls="" preload="none"> <source id="CM2_t" src="converted_sample/VCC2020/M2/1_TEM2_E20042_generated_e2e.wav"> </audio></td>
    </tr>
 </table>
 
@@ -146,8 +146,8 @@ This page provides converted speeches samples. The pretrained model is trained w
       <td>Convert</td>
    </tr>
    <tr>
-      <td>F1_LJ001-0045</td>
-      <td><audio id="audio" controls="" preload="none"> <source id="LF1_s" src="converted_sample/LJSpeech/F1/1_LJ001-0045.wav"> </audio> </td>
+      <td>F1_LJ001-0012</td>
+      <td><audio id="audio" controls="" preload="none"> <source id="LF1_s" src="converted_sample/LJSpeech/F1/1_LJ001-0012.wav"> </audio> </td>
       <td><audio id="audio" controls="" preload="none"> <source id="LF1_t" src="converted_sample/LJSpeech/F1/1_LJ001-0012_generated_e2e"> </audio></td>
    </tr>
    <tr>
