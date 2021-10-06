@@ -5,7 +5,7 @@ Here is the official implementation of the paper, [MediumVC](https).
 The following are the overall model architecture.
 ![Model architecture](any2one/demo_page/image/any2one.png)
 
-For the audio samples, please refer to our [demo page](https://brightgu.github.io/SingleVC/).
+For the audio samples, please refer to our [demo page](https://brightgu.github.io/SingleVC/). The more details can be found in "any2one/demo_page/ConvertedSpeeches/".
 
 ## Usage
 
