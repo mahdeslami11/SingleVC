@@ -7,10 +7,7 @@ The following are the overall model architecture.
 
 For the audio samples, please refer to our [demo page](https://brightgu.github.io/SingleVC/). The more details can be found in "any2one/demo_page/ConvertedSpeeches/".
 
-## Usage
-
-You can download the pretrained model as well as the vocoder following the [link](https://drive.google.com/file/d/1yV9cCne7piqBI9vng13JDdLuRlMkTbZR/view?usp=sharing).
-
+### Envs
 You can install the dependencies with
 ```bash
 pip install -r requirements.txt
@@ -28,7 +25,7 @@ pip install -r requirements.txt
 The [HiFi-GAN](https://github.com/jik876/hifi-gan) vocoder is employed to convert log mel-spectrograms to waveforms. The model is trained on universal datasets with 13.93M parameters. Through our evaluation, it can synthesize 22.05 kHz high-fidelity speeches over 4.0 MOS, even in cross-language or noisy environments.
 
 ## pretrained models
-You can use pretrained models we provide, and then edit the config file any2one/infer/infer_config.yaml.  Infer corpus should be organized as test22050/*.wav
+You can download the pretrained model as well as the vocoder following the [link](https://drive.google.com/file/d/1yV9cCne7piqBI9vng13JDdLuRlMkTbZR/view?usp=sharing), and then edit the config file any2one/infer/infer_config.yaml.  Infer corpus should be organized as test22050/*.wav
 You can convert an list of  utterances, e.g.
 ```bash
 python any2one/infer/infer.py
@@ -39,4 +36,4 @@ The train corpus should be organized as vctk22050/p249/*.wav
 python any2one/solver.py
 ```
 ### Preprocessing
-The model is trained with random pitch shifted speeches processed in real-time. If you want to speed up the training, please refer the code in any2one/meldataset.py
+The model is trained with random pitch shifted speeches processed in real-time. If you want to speed up the training, please refer the code in "any2one/meldataset.py" to have data preprocessed.
