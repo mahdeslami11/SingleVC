@@ -1,6 +1,6 @@
 # SingleVC
 
-SingleVC performs any-to-one VC which is an important component of [MediumVC](https://github.com/BrightGu/MediumVC). 
+SingleVC performs any-to-one VC which is an important component of [MediumVC project](https://github.com/BrightGu/MediumVC). 
 Here is the official implementation of the paper, [MediumVC](http://arxiv.org/abs/2110.02500).
 
 The following are the overall model architecture.
