@@ -1,6 +1,7 @@
 # SingleVC
 
-Here is the official implementation of the paper, [MediumVC](https).
+SingleVC performs any-to-one VC which is an important component of [MediumVC](https://github.com/BrightGu/MediumVC). 
+Here is the official implementation of the paper, [MediumVC](http://arxiv.org/abs/2110.02500).
 
 The following are the overall model architecture.
 ![Model architecture](any2one/demo_page/image/any2one.png)
