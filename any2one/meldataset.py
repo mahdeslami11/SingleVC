@@ -56,7 +56,7 @@ def get_dataset_filelist(wavs_dir):
 def collate_batch(batch):
     """Collate a batch of data."""
     input_mels, target_mels, word = zip(*batch)
-    input_lens = [min(len(input_mel),300) for input_mel in input_mels]
+    input_lens = [len(input_mel) for input_mel in input_mels]
     overlap_lens = input_lens
     input_mels = pad_sequence(input_mels, batch_first=True)  # (batch, max_src_len, wav2vec_dim)
     input_masks = [torch.arange(input_mels.size(1)) >= input_len for input_len in input_lens]
