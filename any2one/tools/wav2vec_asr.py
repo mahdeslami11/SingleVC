@@ -1,43 +1,78 @@
 import os
-import pyrubberband as pyrb
-from transformers import Wav2Vec2ForCTC, Wav2Vec2Tokenizer
-import  librosa
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+from jiwer import wer
+from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
+
+import soundfile as sf
 import torch
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
+model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h").to(device)
 
-tokenizer = Wav2Vec2Tokenizer.from_pretrained("facebook/wav2vec2-base-960h")
-model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h")
+def cal_wer(tar_dir,src_dir,out_txt_path):
+    src_audio_list = []
+    tar_audio_list = []
+    file_name_list = []
+    src_text_list = []
+    tar_text_list = []
+    target_audio_list = os.listdir(tar_dir)
+    for index, file_name in enumerate(target_audio_list):
+        tar_file_path = os.path.join(tar_dir, file_name)
+        ori_file_name = file_name.split("TO")[0]+".wav"
+        src_file_path = os.path.join(src_dir, ori_file_name)
+        print("ori_file_name:",ori_file_name)
+        src_audio,_= sf.read(src_file_path)
+        tar_audio,_ = sf.read(tar_file_path)
+        print("len src_audio",len(src_audio))
+        file_name_list.append(ori_file_name)
+        src_audio_list.append(src_audio)
+        tar_audio_list.append(tar_audio)
+        input_values = processor(src_audio_list, return_tensors="pt", sampling_rate=16000,
+                                 padding="longest").input_values  # Batch size 1
+        input_values = input_values.cuda()
+        # retrieve logits
+        logits = model(input_values).logits
+        logits = logits.data
+        # take argmax and decode
+        predicted_ids = torch.argmax(logits, dim=-1)
+        src_transcription_list = processor.batch_decode(predicted_ids)
+        input_values = processor(tar_audio_list, return_tensors="pt", sampling_rate=16000,
+                                 padding="longest").input_values  # Batch size 1
+        # retrieve logits
+        input_values = input_values.cuda()
+        logits = model(input_values).logits
+        logits = logits.data
+        # take argmax and decode
+        predicted_ids = torch.argmax(logits, dim=-1)
+        tar_transcription_list = processor.batch_decode(predicted_ids)
+        assert len(tar_transcription_list) == len(src_transcription_list)
+        if "" in tar_transcription_list or "" in src_transcription_list:
+            src_audio_list.clear()
+            tar_audio_list.clear()
+            src_transcription_list.clear()
+            tar_transcription_list.clear()
+            continue
 
-wave_dir = r"audio_datasets/VCTK-Corpus/p249_16000"
-for pitch_s in range(-11,11):
-        print("pitch_s:", pitch_s)
-        count = 0
-        error_count = 0
-        for file_name in os.listdir(wave_dir):
-            file_path = os.path.join(wave_dir ,file_name)
-            audio, rate = librosa.load(file_path, sr=16000)
-            input_values = tokenizer(audio, return_tensors="pt").input_values
-            logits = model(input_values).logits
-            prediction = torch.argmax(logits, dim=-1)
-            transcription = tokenizer.batch_decode(prediction)[0]
-            text_arr = transcription.split(" ")
+        src_text_list= src_text_list+src_transcription_list
+        tar_text_list= tar_text_list+tar_transcription_list
 
-            audio_pitch = pyrb.pitch_shift(audio, rate, pitch_s)
-            input_values_pitch = tokenizer(audio_pitch, return_tensors="pt").input_values
-            logits_pitch = model(input_values_pitch).logits
-            prediction_pitch = torch.argmax(logits_pitch, dim=-1)
-            transcription_pitch = tokenizer.batch_decode(prediction_pitch)[0]
-            text_pitch_arr = transcription_pitch.split(" ")
+        src_audio_list.clear()
+        tar_audio_list.clear()
 
-            t_len = min(len(text_arr),len(text_pitch_arr))
-            count = count + t_len
-            for index in range(t_len):
-                if text_pitch_arr[index]!=text_arr[index]:
-                    error_count = error_count + 1
+    try:
+        werate = wer(src_text_list, tar_text_list)
+        print("WER:", werate)
+        with open(out_txt_path, "w+") as f:
+            for index in range(len(file_name_list)):
+                f.writelines(file_name_list[index] + "\n")
+                f.writelines(src_text_list[index] + "\n")
+                f.writelines(tar_text_list[index] + "\n")
+            f.writelines("WER:" + str(werate) + "\n")
+    except:
+        pass
 
-        print("count:",count)
-        print("error count:",error_count)
-        print("rate:",error_count/count)
-
+    src_text_list.clear()
+    tar_text_list.clear()
 
 
 
