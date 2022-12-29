@@ -57,17 +57,30 @@ python any2one/solver.py
 2. If use preprocess method in HiFi-GAN vocoder, the training will take about one day with TITAN Xp, and the performances will be more robust. However, using preprocess method in WaveRNN,  the training will just spend three hours.
 
 These papers help to better undrestand SingleVC:
+
 [2107.09477.pdf](https://github.com/navidjm77/SingleVC/files/10322055/2107.09477.pdf)
+
 [1102.1364.pdf](https://github.com/navidjm77/SingleVC/files/10322056/1102.1364.pdf)
+
 [1943-7714-article-p481.pdf](https://github.com/navidjm77/SingleVC/files/10322059/1943-7714-article-p481.pdf)
+
 [cignatov,+16_Fraim_ReviewMedLight.pdf](https://github.com/navidjm77/SingleVC/files/10322061/cignatov.%2B16_Fraim_ReviewMedLight.pdf)
+
 [Discourse_Language_New_Media20190920_105897_lfle69_with_cover_page.pdf](https://github.com/navidjm77/SingleVC/files/10322063/Discourse_Language_New_Media20190920_105897_lfle69_with_cover_page.pdf)
+
 [document.pdf](https://github.com/navidjm77/SingleVC/files/10322067/document.pdf)
+
 [hsee-medium-jcr2003.pdf](https://github.com/navidjm77/SingleVC/files/10322068/hsee-medium-jcr2003.pdf)
+
 [jbacter00339-0098.pdf](https://github.com/navidjm77/SingleVC/files/10322069/jbacter00339-0098.pdf)
+
 [MANetal1960MRSmedium.pdf](https://github.com/navidjm77/SingleVC/files/10322072/MANetal1960MRSmedium.pdf)
+
 [masters2007.pdf](https://github.com/navidjm77/SingleVC/files/10322074/masters2007.pdf)
+
 [MEDIUM_THEORY_0386-with-cover-page-v2.pdf](https://github.com/navidjm77/SingleVC/files/10322075/MEDIUM_THEORY_0386-with-cover-page-v2.pdf)
+
 [Small_and_Medium_Enterprises_Across_the_20170213_16161_1yt45no_with.pdf](https://github.com/navidjm77/SingleVC/files/10322092/Small_and_Medium_Enterprises_Across_the_20170213_16161_1yt45no_with.pdf)
+
 
 Navid Jamshidzadeh (40114140111012)
