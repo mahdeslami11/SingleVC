@@ -84,4 +84,5 @@ These papers help to better undrestand SingleVC:
 
 
 Navid Jamshidzadeh (40114140111012)
+
 I am a master's student at South Tehran University, in the field of medical engineering, bioelectrical orientation. This project is related to the course of digital signal processing.
