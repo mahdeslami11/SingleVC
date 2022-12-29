@@ -5,10 +5,11 @@ Here is the official implementation of the paper,[2107.09477.pdf](https://github
 
 ![image](https://user-images.githubusercontent.com/115845006/210010304-f22ce7a6-0724-4d20-b1a5-86569f1b5644.png)
 
+## About this project
+
 In voice conversion (VC), an approach showing promising results in the latest voice conversion challenge (VCC) 2020 is to first use an automatic speech recognition (ASR) model to transcribe the source speech into the underlying linguistic contents; these are then used as input by a text-to-speech (TTS) system to generate the converted speech. Such a paradigm, referred to as ASR+TTS, overlooks the modeling of prosody, which plays an important role in speech naturalness and conversion similarity. Although some researchers have considered transferring prosodic clues from the source speech, there arises a speaker mismatch during training and conversion. To address this issue, in this work, we propose to directly predict prosody from the linguistic representation in a target-speaker-dependent manner, referred to as target text prediction (TTP). We evaluate both methods on the VCC2020 benchmark and consider different linguistic representations. The results demonstrate the effectiveness of TTP in both objective and subjective evaluations.
 
-SingleVC performs any-to-one VC, which is an important component of [MediumVC project](https://github.com/BrightGu/MediumVC). 
-Here is the official implementation of the paper, [MediumVC](http://arxiv.org/abs/2110.02500).
+Here is the other useful official implementation of the paper, [MediumVC](http://arxiv.org/abs/2110.02500).
 
 The following are the overall model architecture.
 ![Model architecture](any2one/demo_page/image/any2one.png)
