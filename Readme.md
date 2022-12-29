@@ -83,6 +83,6 @@ These papers help to better undrestand SingleVC:
 [Small_and_Medium_Enterprises_Across_the_20170213_16161_1yt45no_with.pdf](https://github.com/navidjm77/SingleVC/files/10322092/Small_and_Medium_Enterprises_Across_the_20170213_16161_1yt45no_with.pdf)
 
 
-# Navid Jamshidzadeh (40114140111012)
+## Navid Jamshidzadeh (40114140111012)
 
 I am a master's student at South Tehran University, in the field of medical engineering, bioelectrical orientation. This project is related to the course of digital signal processing.
