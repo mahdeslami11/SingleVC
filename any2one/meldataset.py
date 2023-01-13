@@ -108,7 +108,7 @@ class MelDataset(torch.utils.data.Dataset):
         return len(self.audio_files)
 
 
-class Test_elDataset(torch.utils.data.Dataset):
+class Test_MelDataset(torch.utils.data.Dataset):
     def __init__(self, test_files, n_fft, num_mels, hop_size,
                  win_size, sampling_rate,  fmin, fmax,device=None):
         self.audio_files = test_files
