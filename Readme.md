@@ -9,10 +9,19 @@ Here is the official implementation of the paper,[2107.09477.pdf](https://github
 
 In voice conversion (VC), an approach showing promising results in the latest voice conversion challenge (VCC) 2020 is to first use an automatic speech recognition (ASR) model to transcribe the source speech into the underlying linguistic contents; these are then used as input by a text-to-speech (TTS) system to generate the converted speech. Such a paradigm, referred to as ASR+TTS, overlooks the modeling of prosody, which plays an important role in speech naturalness and conversion similarity. Although some researchers have considered transferring prosodic clues from the source speech, there arises a speaker mismatch during training and conversion. To address this issue, in this work, we propose to directly predict prosody from the linguistic representation in a target-speaker-dependent manner, referred to as target text prediction (TTP). We evaluate both methods on the VCC2020 benchmark and consider different linguistic representations. The results demonstrate the effectiveness of TTP in both objective and subjective evaluations.
 
+## Summery Of Repo
+
+To realize any-to-any (A2A) voice conversion (VC), most methods are to perform symmetric self-supervised reconstruction tasks (Xi ! ^ Xi), which usually results in inefficient performances due to inadequate feature decoupling, especially for unseen speakers.
+
+
 Here is the other useful official implementation of the paper, [MediumVC](http://arxiv.org/abs/2110.02500).
 
 The following are the overall model architecture.
 ![Model architecture](any2one/demo_page/image/any2one.png)
+
+## Project Traslation
+[ترجمه مقاله.pdf](https://github.com/mahdeslami11/SingleVC/files/10410997/default.pdf)
+
 
 For the audio samples, please refer to our [demo page](https://brightgu.github.io/SingleVC/). The more details can be found in "any2one/demo_page/ConvertedSpeeches/".
 
@@ -82,7 +91,17 @@ These papers help to better undrestand SingleVC:
 
 [Small_and_Medium_Enterprises_Across_the_20170213_16161_1yt45no_with.pdf](https://github.com/navidjm77/SingleVC/files/10322092/Small_and_Medium_Enterprises_Across_the_20170213_16161_1yt45no_with.pdf)
 
+## Also, in the future we can work on these parts to make the SingleVC work better
+
+Identification of the speaker
+
+Detection of emotional states (laughter, crying, anger, etc.)
+
+Convert speech into other language phrases
 
 ## Navid Jamshidzadeh (40114140111012)
 
 I am a master's student at South Tehran University, in the field of medical engineering, bioelectrical orientation. This project is related to the course of digital signal processing.
+
+## Orginal Project:
+https://github.com/BrightGu/SingleVC
