@@ -124,7 +124,7 @@ class MelDataset(torch.utils.data.Dataset):
             audio = self.cached_wav
             self._cache_ref_count -= 1
 
-        audio = torch.FloatTensor(audio)
+        audio = torch.loatTensor(audio)
         audio = audio.unsqueeze(0)
 
         if not self.fine_tuning:
