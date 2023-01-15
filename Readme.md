@@ -103,5 +103,9 @@ Convert speech into other language phrases
 
 I am a master's student at South Tehran University, in the field of medical engineering, bioelectrical orientation. This project is related to the course of digital signal processing.
 
+## You can see the presentation of this project on the following site :
+
+https://drive.google.com/file/d/1hWrcyBYS1WxgJwCxPt1LQrNSy3cElwF/view?usp=drivesdk
+
 ## Orginal Project:
 https://github.com/BrightGu/SingleVC
