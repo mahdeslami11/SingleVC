@@ -22,6 +22,11 @@ The following are the overall model architecture.
 ## Project Traslation
 [ترجمه مقاله.pdf](https://github.com/mahdeslami11/SingleVC/files/10410997/default.pdf)
 
+## project Explanation
+
+Video:
+https://drive.google.com/file/d/1iANt6SI58wTDjPs7tvNai0G9HVL3jOrY/view?usp=drivesdk
+
 
 For the audio samples, please refer to our [demo page](https://brightgu.github.io/SingleVC/). The more details can be found in "any2one/demo_page/ConvertedSpeeches/".
 
